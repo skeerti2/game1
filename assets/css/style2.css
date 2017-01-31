@@ -9,7 +9,6 @@ body{
 }
 
 .container-main {
-
   width: 1200px;
   height:650px;
   margin: 0 auto;
@@ -22,7 +21,6 @@ body{
 }
 
 .container-left {
-
   width: 640px;
   height:640px;
   /*margin: 0 auto;*/
@@ -118,13 +116,13 @@ body{
 }
 
 
-.buttons-panel {
+/*.buttons-panel {
   width: 500px;
   height: 80px;
   display: inline-block;
-}
+}*/
 
-.quit-button{
+/*.quit-button{
   background-color: #FFFD82;
   background-position: center;
   height: 70px;
@@ -133,16 +131,16 @@ body{
   /*text-align: center;
   font-size: 40px;
   font-weight: bold;*/
-  border-radius: 12px;
+  /*border-radius: 12px;
   border-color: #EEE4E1;
   border-width: 10px;
   border-style: solid;
   margin: 10px 20px;
-  display: inline-block;
+  display: inline-block;*/
   /*flex:auto;*/
-}
+/*}*/
 
-.main-menu-button{
+/*.main-menu-button{
   background-color: #FFFD82;
   background-position: center;
   height: 70px;
@@ -151,24 +149,62 @@ body{
   /*text-align: center;
   font-size: 40px;
   font-weight: bold;*/
-  border-radius: 12px;
+  /*border-radius: 12px;
   border-color: #EEE4E1;
   border-width: 10px;
   border-style: solid;
   margin: 10px 20px;*/
-  display: inline-block;
-  float: right;
+  /*display: inline-block;
+  float: right;*/
   /*flex:auto;*/
-}
+/*}*/
 
-.buttons-panel-text {
+.buttons-panel-text1{
+  height: 70px;
+  width: 185px;
+  background-color: #FFFD82;
+  /*border: none;*/
+  /*align-items: center;*/
+  outline: none;
   font-size: 30px;
+  border-radius: 12px;
+  border-width: 10px;
+  border-color: #EEE4E1;
   font-weight: bold;
+  margin: 10px 20px;
   font-family: 'Gloria Hallelujah', cursive;
   text-align: center;
+  background-position: center;
+  display: inline-block;
   color: #4B3B47;
+  float: left;
+
   /*padding: 0px 0px 20px 0px;*/
-  margin: 5px;
+  margin: 5px 30px;
+}
+
+.buttons-panel-text2{
+  height: 70px;
+  width: 185px;
+  background-color: #FFFD82;
+  /*border: none;*/
+  /*align-items: center;*/
+  outline: none;
+  font-size: 30px;
+  border-radius: 12px;
+  border-width: 10px;
+  border-color: #EEE4E1;
+  font-weight: bold;
+  margin: 10px 20px;
+  font-family: 'Gloria Hallelujah', cursive;
+  text-align: center;
+  background-position: center;
+  display: inline-block;
+  color: #4B3B47;
+  float: left;
+
+  /*padding: 0px 0px 20px 0px;*/
+  margin: 5px 30px;
 }
 
 .quit-button:hover{
@@ -191,7 +227,7 @@ body{
   background: #FFA686;
 }
 .box.puppy{
-  background-image:url('http://i.giphy.com/26Fxy3Iz1ari8oytO.gif');
+  background-image:url('../../giphy.gif');
   background-size: cover;
   background-position: center;
   max-height: 100%;
@@ -199,9 +235,17 @@ body{
 }
 
 .box.fox{
-  background-image: url(https://s-media-cache-ak0.pinimg.com/originals/df/8e/67/df8e67b2c03d5a42cef2b7067af5f348.gif);
+  background-image: url('../../fox.gif');
   background-size: cover;
   background-position: center;
   max-height: 100%;
   max-width: 100%;
 }
+/*.modal-content{
+  display: none;
+  position:fixed;
+  z-index: 1;
+  margin: 15% auto;
+  width: 80%;
+  background-color: #7180AC;
+}*/

@@ -1,34 +1,97 @@
 @import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah');
+/*carousel stuff*/
+ul{
+  /*margin-top: 0px;*/
+  text-align: center;
+  list-style-type: none;
+  /*display: inline-block;*/
+  /*padding: 30px;*/
+  /*margin: 0px 0px 0px 200px;*/
+}
+.instructions{
+  position: relative;
+  text-align: center;
+  margin: 20px;
+}
+a.button{
+  /*height: 150px;
+  width: 200px;
+  font-size: 20px;
+  /*font-style:*/
+  /*border-width: medium;
+  border-style: solid;*/
+  /*border-color: #000;*/
 
+  /*font-family: 'Gloria Hallelujah', cursive;
+  background-color: 'white';
+  color: red;
+  border-radius: 50%;*/
+  -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    width: 150px;
+    font-size: 20px;
+    text-decoration: none;
+    color: initial;
+}
+li{
+  text-align: center;
+  /*margin: auto 30px;*/
+}
+img{
+  float: left;
+}
+h1{
+  font-size: 50px;
+  text-align: center;
+  font-weight: bolder;
+  /*font-style: italic;*/
+  /*border-style:*/
+}
+p{
+  margin: -20px 0px 0px 0px;
+  display:flex;
+  font-size: 25px;
+  text-align: center;
+}
+h2{
+  text-align: center;
+  margin: 40px 0px 0px 40px;
+}
 .wrapper {
-  margin: 0 auto;
+  /*margin: 0 auto;*/
   max-width: 900px;
 
 }
 
 .container {
-  margin-top: 100px;
+  margin-top: 50px;
 
 }
 
 .contain-animation {
   height: 695px;
+  display: inline-block;
 }
 
 .contain-dog {
-  position: relative;
-  margin: -50px auto;
-  width: 870px;
-  height: 180px;
-  left: 600px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  /*float: right;*/
+  /*margin: px auto;*/
+  /*margin-top: -500px;*/
+  width: 180px;
+  height: 870px;
+  /*margin-left: 1300px;*/
 }
 
 .cover {
   position: absolute;
 /*   flex-direction: column; */
-  top: -30px;
+  top: -20px;
   left: 0;
-  background: #fff;
+  background: #AA767C;
   height: 900px;
   width: 180px;
   animation: walk 5s steps(9, end) infinite;
@@ -72,9 +135,12 @@
   background: #FFA686;
 }
 
-img{
+/*img{
   position: absolute;
-}
+
+  /*align-items: flex-start;*/
+  /*display: inline-block;*/
+/*}*/
 
 .main-panel{
   background-color: #474350;
@@ -190,4 +256,5 @@ body{
   background: #AA767C;
   font-family: 'Gloria Hallelujah', cursive;
   font-size: 17px;
+  background-size: cover;
 }
