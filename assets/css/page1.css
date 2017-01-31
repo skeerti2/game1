@@ -1,0 +1,117 @@
+/*.wrapper {
+  margin: 0 auto;
+  max-width: 900px;
+  height: 400px;
+  flex-direction: column;
+}*/
+
+body{
+  /*background: url('https://img.clipartfest.com/2345d272252c76016e04f63dc85b0fd7_backgroundpng-garden-clipart-background-png_1500-724.png');*/
+background-color: #D36582;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position:relative;
+  /*height: 600%;
+  width: 600%;*/
+
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 900px;
+  /*flex-direction: column-reverse;*/
+}
+
+.container {
+  margin-top: 400px;
+}
+
+.contain-animation {
+  height: 400px;
+}
+
+.contain-dog {
+  position: relative;
+  margin: -50px auto;
+  width: 870px;
+  height: 200px;
+}
+
+.cover {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #D36582;
+  height: 180px;
+  width: 870px;
+  animation: walk 5s steps(9, end) infinite;
+  -webkit-animation: walk 5s steps(5, end) infinite;
+}
+
+@keyframes walk {
+  to {
+    transform: translateX(755px);
+  }
+}
+
+@-webkit-keyframes walk {
+  to {
+    -webkit-transform: translateX(755px);
+  }
+}
+
+/*.container {
+  height: 200px;
+  margin-top: 300px;
+  display: flex;
+  /*align-items: flex-end;*/
+  /*vertical-align: bottom;*/
+  /*margin-right: 100px;*/
+/*}
+
+.contain-animation {
+  margin: 100px -200px;
+  height: 200px;
+  display: flex;
+  align-items: flex-end;
+  width: 900px;
+}*/
+
+/*.contain-dog {
+  position: relative;
+  margin: 300px 100px 0px 0px;
+  vertical-align: bottom;
+  /*position: fixed;*/
+  /*bottom: 0;*/
+  /*display: flex;
+  align-items: flex-end;
+  width: 870px;
+  height: 200px;
+}
+
+.cover {
+  position: absolute;
+  margin: 200px -100px 0px 0px;
+  /*left: 0;*/
+  /*background: #fff;
+  display: flex;
+  align-items: flex-end;*/
+  /*opacity: 0.5;*/
+  /*height: 180px;
+  width: 870px;
+  animation: walk 5s steps(9, end) infinite;
+  -webkit-animation: walk 5s steps(5, end) infinite;
+}
+
+@keyframes walk {
+  to {
+    transform: translateX(755px);
+  }
+}
+
+@-webkit-keyframes walk {
+  to {
+    -webkit-transform: translateX(755px);
+  }*/
+/*}*/

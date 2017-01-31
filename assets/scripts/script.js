@@ -8,11 +8,16 @@ $(document).ready(function () {
   var totalPuppies = 0
   var timeCheck
   var count = 0
+  var prevRandNum = -1
 
   var $startbutton = $('.divCount-StartButton')
   $startbutton.on('click', startGame)
   var $pupCount = $('.right-panel-text-pups')
   var $timeCount = $('.right-panel-text-time')
+
+  var $restartButton = $('.buttons-panel-text2')
+  $restartButton.on('click', startGame)
+
     // var $boxClick = $('.box')
     // $boxClick.on('click', pupCountRecord)
 
@@ -20,11 +25,13 @@ $(document).ready(function () {
   function startGame () {
     time = 50
     pupsSaved = 0
+    var $audioLoop = $('.song')[0]
+    $audioLoop.play()
     $pupCount.text('Pups Caught: ' + pupsSaved)
     totalPuppies = 0
-    timerIdGameClock = setInterval(updateTime, 1000)
+    timerIdGameClock = setInterval(updateTime, 1500)
 
-    timerIdPuppyChange = setInterval(randomize, 1000)
+    timerIdPuppyChange = setInterval(randomize, 1500)
         // console.log('u  want to play')
     console.log('Timer has started')
 
@@ -40,32 +47,37 @@ $(document).ready(function () {
       clearInterval(timerIdGameClock)
       clearInterval(timerIdPuppyChange)
       $timeCount.text('TIME: ' + time)
-      alert('GAME OVER!!  ')
-      console.log(totalPuppies)
+      $('#myModal').modal()
+      $('.modal-para').text('You caught ' + pupsSaved + ' out of ' + totalPuppies + ' puppies.')
+
+      // alert('GAME OVER!!  ')
+
+      // console.log(totalPuppies)
       if (totalPuppies === pupsSaved) {
         alert('Yayyyy! You caught them all! ')
       }
       $('.box.puppy').removeClass('puppy') // this will remove the puppy once game is over!
       $('.box.fox').removeClass('fox')
+
       console.log(time)
     } else if (time === 40) {
       clearInterval(timerIdPuppyChange)
-      timerIdPuppyChange = setInterval(randomize, 950)
+      timerIdPuppyChange = setInterval(randomize, 1450)
     } else if (time === 35) {
       clearInterval(timerIdPuppyChange)
-      timerIdPuppyChange = setInterval(randomize, 900)
+      timerIdPuppyChange = setInterval(randomize, 1400)
     } else if (time === 30) {
       clearInterval(timerIdPuppyChange)
-      timerIdPuppyChange = setInterval(randomize, 850)
+      timerIdPuppyChange = setInterval(randomize, 1350)
     } else if (time === 25) {
       clearInterval(timerIdPuppyChange)
-      timerIdPuppyChange = setInterval(randomize, 800)
+      timerIdPuppyChange = setInterval(randomize, 1200)
     } else if (time === 20) {
       clearInterval(timerIdPuppyChange)
-      timerIdPuppyChange = setInterval(randomize, 750)
+      timerIdPuppyChange = setInterval(randomize, 1150)
     } else if (time === 15) {
       clearInterval(timerIdPuppyChange)
-      timerIdPuppyChange = setInterval(randomize, 700)
+      timerIdPuppyChange = setInterval(randomize, 1100)
     }
   }
     // this function maintains the pup counts as per the players response to the game.
@@ -78,7 +90,6 @@ $(document).ready(function () {
     console.log(pupsSaved)
     $('.box.fox').removeClass('fox') // This will remove fox once you catch (click) it! - this wont reduce pupSaved twice on double click
     $('.box').off() // remove previously added event handler. Once fox is clicked, re-clicking on same position wont decrement pup-count
-
   }
   function pupCountRecord () {
     // var $sound = $('#hit')[0]
@@ -97,20 +108,26 @@ $(document).ready(function () {
     console.log('count: ' + count)
     min = 0
     max = 11
+
     randNum = Math.floor(Math.random() * (max - min + 1)) + min // Generate a random number from 0-11 (equal to grid indexes)
+    while (prevRandNum === randNum) {
+      randNum = Math.floor(Math.random() * (max - min + 1)) + min
+    }
+    prevRandNum = randNum
+
     console.log('My random number:' + randNum)
         // var something = $('.box.puppy') // when this is done, the div element with the paw is returned. grid filled with paws.
     $('.box.puppy').removeClass('puppy') // remove puppy from previous position. if there is no puppy, no action taken.
     $('.box.fox').removeClass('fox')
     $('.box').off() // remove previously added click event handlers- event handler in previous div's position is removed.
     var showFox = false
-    if (time < 15) {
-      if(foxAppear() === true && count % 2 === 0){
+    if (time < 30) {
+      if (foxAppear() === true && count % 2 === 0) {
         showFox = true
       }
     }
 
-    if(showFox === true){
+    if (showFox === true) {
       $('.box').eq(randNum).addClass('fox')
       var $foxGif = $('.fox')
       $foxGif.on('click', pupCountReduce)
@@ -127,7 +144,7 @@ $(document).ready(function () {
   function foxAppear () {
     // min = 0
     // max = 1
-    //randNumFox = Math.floor(Math.random() * (max - min + 1)) + min
+    // randNumFox = Math.floor(Math.random() * (max - min + 1)) + min
     randNumFox = Math.random()
     // console.log('foxAppear:' + randNumFox)
     return randNumFox >= 0.5 // return true or false
